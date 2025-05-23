@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0a2463; /* Azul escuro como o céu noturno da imagem */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="none" stroke="%23113879" stroke-width="2" d="M50,10 C60,20 80,20 90,10 C90,30 90,50 90,70 C80,60 60,60 50,70 C40,60 20,60 10,70 C10,50 10,30 10,10 C20,20 40,20 50,10 Z"/></svg>');
+    background-size: 100px 100px;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elementos decorativos - Lua */
+body::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 60px;
+    height: 60px;
+    background-color: #e0f2ff;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 5px rgba(224, 242, 255, 0.5);
+    z-index: -1;
+}
+
+/* Bolhas decorativas */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes float-delay {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="500" height="200" viewBox="0 0 500 200"><path fill="%233f88c5" opacity="0.3" d="M0,100 C150,50 350,150 500,100 L500,200 L0,200 Z"/></svg>');
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: rgba(63, 136, 197, 0.85); /* Azul médio como o lago da imagem */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff; /* Branco como o texto na imagem */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.swiper {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f1f1;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.swiper-pagination-bullet {
+    background: #7ecbb9; /* Verde claro como o sapo da imagem */
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.names-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.names-container h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff; /* Branco como o texto na imagem */
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.names-container p {
+    font-size: 16px;
+    color: #e0f2ff; /* Azul muito claro para contraste */
+}
+
+.counter-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(10, 36, 99, 0.7); /* Azul escuro semitransparente */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(126, 203, 185, 0.3); /* Borda verde claro */
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 23%;
+}
+
+.counter div {
+    font-size: 24px;
+    font-weight: 700;
+    color: #7ecbb9; /* Verde claro como o sapo da imagem */
+    margin-bottom: 5px;
+}
+
+.counter span {
+    font-size: 12px;
+    color: #ffffff; /* Branco para melhor legibilidade */
+}
+
+.spotify-container {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(126, 203, 185, 0.5); /* Borda verde claro */
+}
+
+/* Bolhas animadas */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(224, 242, 255, 0.2);
+    border: 1px solid rgba(224, 242, 255, 0.3);
+    z-index: -1;
+    animation: float 6s ease-in-out infinite;
+}
+
+.bubble:nth-child(1) {
+    width: 20px;
+    height: 20px;
+    bottom: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 15px;
+    height: 15px;
+    bottom: 40%;
+    left: 20%;
+    animation-delay: 1s;
+    animation-duration: 8s;
+}
+
+.bubble:nth-child(3) {
+    width: 25px;
+    height: 25px;
+    bottom: 30%;
+    right: 15%;
+    animation-delay: 2s;
+    animation-duration: 7s;
+}
+
+.bubble:nth-child(4) {
+    width: 10px;
+    height: 10px;
+    bottom: 60%;
+    right: 25%;
+    animation-delay: 3s;
+    animation-duration: 5s;
+}
+
+/* Plantas aquáticas */
+.plant {
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    height: 80px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="80" viewBox="0 0 30 80"><path fill="%237ecbb9" opacity="0.6" d="M15,0 C20,20 25,40 30,60 C25,65 20,65 15,60 C10,65 5,65 0,60 C5,40 10,20 15,0 Z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    animation: float-delay 8s ease-in-out infinite;
+}
+
+.plant:nth-child(1) {
+    left: 5%;
+    height: 100px;
+    animation-delay: 0.5s;
+}
+
+.plant:nth-child(2) {
+    left: 85%;
+    height: 70px;
+    animation-delay: 1.5s;
+}
+
+@media (max-width: 400px) {
+    .counter div {
+        font-size: 20px;
+    }
+    
+    .counter span {
+        font-size: 10px;
+    }
+    
+    .swiper {
+        height: 250px;
+    }
+    
+    body::before {
+        width: 40px;
+        height: 40px;
+        top: 30px;
+        left: 30px;
+    }
+}
